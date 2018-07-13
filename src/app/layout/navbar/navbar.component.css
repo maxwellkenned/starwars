@@ -1,0 +1,39 @@
+aside {
+    height: 100%; 
+    width: 180px; 
+    border-right: solid 1px;
+    border-color: #2b2e32;
+    border-top: none;
+    color:#ffe300;
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+aside h3 {
+    border-bottom: solid 1px;
+    margin-bottom: 0;
+    padding-bottom: 12px;
+}
+
+ul {
+    list-style: none;
+    padding:10px 0px; 
+}
+a {
+    text-decoration: none;
+    color:#ffe300;
+}
+aside nav a {
+    padding: 6px 8px 6px 16px;
+    font-size: 18px;    
+    display: block;
+}
+
+aside nav li:hover {
+    background-color: #272b30;
+    border-right: solid 1px #ffe300;
+}

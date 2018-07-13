@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    font-family: "helvetica neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #c8c8c8;
+    background-color: #272b30;
+    width: calc(100% - 30px);
+}
+
+.active {
+    background-color: #272b30;
+    border-right: solid 1px #ffe300;
+}
