@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { VeiculosComponent } from './veiculos/veiculos.component';
 import { VeiculoDetalheComponent } from './veiculos/veiculo-detalhe/veiculo-detalhe.component';
 import { NavesDetalheComponent } from './naves/naves-detalhe/naves-detalhe.component';
+import { EspecieDetalheComponent } from './especies/especie-detalhe/especie-detalhe.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'pessoas', component: PessoasComponent},
   {path: 'planetas', component: PlanetasComponent},
   {path: 'especies', component: EspeciesComponent},
+  {path: 'especies/detalhe/:id', component: EspecieDetalheComponent},
   {path: 'naves', component: NavesComponent},
   {path: 'naves/detalhe/:id', component: NavesDetalheComponent},
   {path: 'veiculos', component: VeiculosComponent},

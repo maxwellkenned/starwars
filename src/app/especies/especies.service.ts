@@ -16,4 +16,10 @@ export class EspeciesService {
     const getUrl = url ? url :  API + 'species/';
     return this.http.get<Especie[]>(getUrl, {responseType: 'json'});
   }
+
+  public getEspecieDetalhe(id): Observable<Especie> {
+    const getUrl = API + `species/${id}/`;
+    return this.http.get<Especie>(getUrl, {responseType: 'json'});
+  }
+
 }

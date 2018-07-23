@@ -1,0 +1,40 @@
+<div class="app-loading" *ngIf="loading; else conteudo">
+  <div class="logo"></div>
+  <svg class="spinner" viewBox="25 25 50 50">
+    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+  </svg>
+</div>
+
+<ng-template #conteudo>  
+<div class="h-auto d-flex flex-column ml-5 mt-5">
+  <h1>{{especie?.name}}</h1>
+  <div>
+    <h3>Informações da Espécie</h3>
+    <ul class="ml-3">
+      <li><h5>Classificação: {{especie?.classification }}</h5></li>
+      <li><h5>Designação: {{especie?.designation}}</h5></li>
+      <li><h5>Altura média: {{especie?.average_height}}</h5></li>
+      <li><h5>expectativa de vida: {{especie?.average_lifespan}}</h5></li>
+      <li><h5>Cor dos olhos: {{especie?.eye_colors}} em Galactic Credits</h5></li>
+      <li><h5>Cor do cabelo: {{especie?.hair_colors}}</h5></li>
+      <li><h5>Cor da pele: {{especie?.skin_colors}}</h5></li>
+      <li><h5>Linguagem: {{especie?.language}}</h5></li>
+      <li><h5>Planeta de origem: {{especie?.homewolrd}}</h5></li>
+    </ul>
+  </div> 
+
+  <div *ngIf="especie?.people.length">
+    <h3>Pessoas dessa espécie</h3>
+    <ul class="ml-3">
+      <li *ngFor="let p of especie?.people"><h5>{{p}}</h5></li>
+    </ul>
+  </div>
+
+  <div *ngIf="especie?.films.length">
+    <h3>Filmes</h3>
+    <ul class="ml-3">
+      <li *ngFor="let f of especie?.films"><h5>{{f}}</h5></li>
+    </ul>
+  </div>
+</div>
+</ng-template>
