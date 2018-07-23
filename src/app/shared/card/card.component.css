@@ -3,3 +3,16 @@
     border: 1px solid #6c757d;
     text-align: center;
 }
+
+.card-body {
+    padding: 9px 0;
+}
+.col-4, .col-md-4 {
+    padding: 0; 
+    max-width: 32.333333%;
+    flex: 1 1 32.333333%;
+}
+
+div.title h2 {
+    margin-bottom: 7px;
+}

@@ -1,0 +1,9 @@
+<app-card class="col-4 p-1" 
+  [titlePage]="'Veículos'" 
+  [dataArray]="veiculos"
+  [detalheUrl]="'veiculos'"
+  [previous]="previous"
+  [next]="next"
+  [page]="page"
+  (pagenation)="attPage($event)"
+  ></app-card>

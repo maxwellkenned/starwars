@@ -1,4 +1,4 @@
 .conteudo {
-    margin-left: 195px; /* Same as the width of the sidenav */
+    min-height: 100vh;
     padding: 0 0 10px 0;
 }
