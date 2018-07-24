@@ -1,41 +1,32 @@
-<div class="app-loading" *ngIf="loading; else conteudo">
-    <div class="logo"></div>
-    <svg class="spinner" viewBox="25 25 50 50">
-      <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-    </svg>
+<div class="h-auto d-flex flex-column ml-5 mt-5">
+  <h1>{{veiculo?.name}}</h1>
+  <div>
+    <h3>Informações do Veículo</h3>
+    <ul class="ml-3">
+      <li><h5>Modelo: {{veiculo?.model}}</h5></li>
+      <li><h5>Classe: {{veiculo?.vehicle_class}}</h5></li>
+      <li><h5>Fabricante: {{veiculo?.manufacturer}}</h5></li>
+      <li><h5>Comprimento: {{veiculo?.length}}</h5></li>
+      <li><h5>Custo: {{veiculo?.cost_in_credits}} em Galactic Credits</h5></li>
+      <li><h5>Equipe Técnica: {{veiculo?.crew}}</h5></li>
+      <li><h5>Passageiros: {{veiculo?.passengers}}</h5></li>
+      <li><h5>Velocidade Máxima: {{veiculo?.max_atmosphering_speed}}</h5></li>
+      <li><h5>Capacidade de Carga (kg): {{veiculo?.cargo_capacity}}</h5></li>
+      <li><h5>Consumiveis: {{veiculo?.consumables}}</h5></li>
+    </ul>
+  </div> 
+
+  <div>
+    <h3>Filmes</h3>
+    <ul class="ml-3">
+      <li *ngFor="let film of veiculo?.films"><h5>{{film}}</h5></li>
+    </ul>
   </div>
 
-<ng-template #conteudo>  
-  <div class="h-auto d-flex flex-column ml-5 mt-5">
-    <h1>{{veiculo?.name}}</h1>
-    <div>
-      <h3>Informações do Veículo</h3>
-      <ul class="ml-3">
-        <li><h5>Modelo: {{veiculo?.model}}</h5></li>
-        <li><h5>Classe: {{veiculo?.vehicle_class}}</h5></li>
-        <li><h5>Fabricante: {{veiculo?.manufacturer}}</h5></li>
-        <li><h5>Comprimento: {{veiculo?.length}}</h5></li>
-        <li><h5>Custo: {{veiculo?.cost_in_credits}} em Galactic Credits</h5></li>
-        <li><h5>Equipe Técnica: {{veiculo?.crew}}</h5></li>
-        <li><h5>Passageiros: {{veiculo?.passengers}}</h5></li>
-        <li><h5>Velocidade Máxima: {{veiculo?.max_atmosphering_speed}}</h5></li>
-        <li><h5>Capacidade de Carga (kg): {{veiculo?.cargo_capacity}}</h5></li>
-        <li><h5>Consumiveis: {{veiculo?.consumables}}</h5></li>
-      </ul>
-    </div> 
-
-    <div>
-      <h3>Filmes</h3>
-      <ul class="ml-3">
-        <li *ngFor="let film of veiculo?.films"><h5>{{film}}</h5></li>
-      </ul>
-    </div>
-
-    <div *ngIf="veiculo?.pilots.length">
-      <h3>Pilotos</h3>
-      <ul class="ml-3">
-        <li *ngFor="let piloto of veiculo?.pilots"><h5>{{piloto}}</h5></li>
-      </ul>
-    </div>
+  <div *ngIf="veiculo?.pilots.length">
+    <h3>Pilotos</h3>
+    <ul class="ml-3">
+      <li *ngFor="let piloto of veiculo?.pilots"><h5>{{piloto}}</h5></li>
+    </ul>
   </div>
-</ng-template>
+</div>

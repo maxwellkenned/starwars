@@ -18,4 +18,9 @@ export class PessoasService {
     return this.http.get<Pessoa[]>(getUrl, {responseType: 'json'});
   }
 
+  public getPessoaDetalhe(id): Observable<Pessoa> {
+    const getUrl = API + `people/${id}/`;
+    return this.http.get<Pessoa>(getUrl, {responseType: 'json'});
+  }
+
 }

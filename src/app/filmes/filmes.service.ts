@@ -18,8 +18,9 @@ export class FilmesService {
     return this.http.get<Filme[]>(getUrl, {responseType: 'json'});
   }
 
-  public getName(url: string = ''): Observable<Filme> {
-    const getUrl = url;
+  public getFilmeDetalhe(id): Observable<Filme> {
+    const getUrl = API + `films/${id}/`;
     return this.http.get<Filme>(getUrl, {responseType: 'json'});
-    }
+  }
+
 }

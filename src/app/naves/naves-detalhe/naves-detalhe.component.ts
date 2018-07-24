@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterContentInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Nave } from '../../shared/interface/naves.interface';
 import { ActivatedRoute } from '@angular/router';
 import { NavesService } from '../naves.service';
@@ -8,11 +8,10 @@ import { NamesService } from '../../shared/service/names.service';
   selector: 'app-naves-detalhe',
   templateUrl: './naves-detalhe.component.html'
 })
-export class NavesDetalheComponent implements OnInit, AfterContentInit {
+export class NavesDetalheComponent implements OnInit {
 
   public nave: Nave;
   public id: number;
-  public loading = true;
 
   constructor(private route: ActivatedRoute,
     private navesService: NavesService,
@@ -24,10 +23,6 @@ export class NavesDetalheComponent implements OnInit, AfterContentInit {
     this.getDetalhe();
   }
 
-  ngAfterContentInit() {
-    this.loading = false;
-  }
-
   public getDetalhe() {
     this.navesService.getNaveDetalhe(this.id).subscribe((response) => {
       this.nave = response;
@@ -37,7 +32,6 @@ export class NavesDetalheComponent implements OnInit, AfterContentInit {
   }
 
   public getName(param: string) {
-    console.log(param);
     // tslint:disable-next-line:forin
     for (const i in this.nave[`${param}`]) {
       this.namesService.getName(this.nave[`${param}`][i]).subscribe((res) => {

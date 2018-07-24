@@ -18,4 +18,10 @@ export class PlanetasService {
     return this.http.get<Planeta[]>(getUrl, {responseType: 'json'});
   }
 
+  public getPlanetaDetalhe(id): Observable<Planeta> {
+    const getUrl = API + `planets/${id}/`;
+    return this.http.get<Planeta>(getUrl, {responseType: 'json'});
+  }
+
+
 }

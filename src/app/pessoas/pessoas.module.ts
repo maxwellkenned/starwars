@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { PessoasComponent } from './pessoas.component';
 import { SharedModule } from '../shared/shared.module';
+import { PessoaDetalheComponent } from './pessoa-detalhe/pessoa-detalhe.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule
   ],
   declarations: [
-    PessoasComponent
+    PessoasComponent,
+    PessoaDetalheComponent
   ]
 })
 export class PessoasModule { }

@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PlanetasComponent } from './planetas.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { PlanetaDetalheComponent } from './planeta-detalhe/planeta-detalhe.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { RouterModule } from '@angular/router';
     SharedModule
   ],
   declarations: [
-    PlanetasComponent
+    PlanetasComponent,
+    PlanetaDetalheComponent
   ]
 })
 export class PlanetasModule { }

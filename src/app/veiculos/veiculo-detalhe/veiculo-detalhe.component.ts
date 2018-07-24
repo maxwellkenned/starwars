@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterContentInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { VeiculosService } from '../veiculos.service';
@@ -9,11 +9,10 @@ import { NamesService } from '../../shared/service/names.service';
   selector: 'app-veiculo-detalhe',
   templateUrl: './veiculo-detalhe.component.html'
 })
-export class VeiculoDetalheComponent implements OnInit, AfterContentInit {
+export class VeiculoDetalheComponent implements OnInit {
 
   public veiculo: Veiculo;
   public id: number;
-  public loading = true;
 
   constructor(private route: ActivatedRoute, private veiculosService: VeiculosService, private namesService: NamesService) {
     this.id = this.route.params['value'].id;
@@ -21,10 +20,6 @@ export class VeiculoDetalheComponent implements OnInit, AfterContentInit {
 
   ngOnInit() {
     this.getDetalhe();
-  }
-
-  ngAfterContentInit() {
-    this.loading = false;
   }
 
   public getDetalhe() {
@@ -36,7 +31,6 @@ export class VeiculoDetalheComponent implements OnInit, AfterContentInit {
   }
 
   public getName(param: string) {
-    console.log(param);
     // tslint:disable-next-line:forin
     for (const i in this.veiculo[`${param}`]) {
       this.namesService.getName(this.veiculo[`${param}`][i]).subscribe((res) => {
@@ -44,7 +38,4 @@ export class VeiculoDetalheComponent implements OnInit, AfterContentInit {
       });
     }
   }
-
-
-
 }

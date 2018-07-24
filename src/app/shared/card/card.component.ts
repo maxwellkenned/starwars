@@ -52,8 +52,6 @@ export class CardComponent implements OnInit, OnChanges {
     // tslint:disable-next-line:radix
     const id = Number(url.match(/\d+/g));
     this.router.navigate([baseUrl, id]);
-    console.log('baseUrl', baseUrl);
-    console.log('ID', id);
   }
 
 }

@@ -1,43 +1,34 @@
-<div class="app-loading" *ngIf="loading; else conteudo">
-    <div class="logo"></div>
-    <svg class="spinner" viewBox="25 25 50 50">
-      <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-    </svg>
+<div class="h-auto d-flex flex-column ml-5 mt-5">
+  <h1>{{nave?.name}}</h1>
+  <div>
+    <h3>Informações da Espaçonave</h3>
+    <ul class="ml-3">
+      <li><h5>Modelo: {{nave?.model}}</h5></li>
+      <li><h5>Classe: {{nave?.starship_class}}</h5></li>
+      <li><h5>Fabricante: {{nave?.manufacturer}}</h5></li>
+      <li><h5>Comprimento: {{nave?.length}}</h5></li>
+      <li><h5>Custo: {{nave?.cost_in_credits}} em Galactic Credits</h5></li>
+      <li><h5>Equipe Técnica: {{nave?.crew}}</h5></li>
+      <li><h5>Passageiros: {{nave?.passengers}}</h5></li>
+      <li><h5>Velocidade Máxima: {{nave?.max_atmosphering_speed}}</h5></li>
+      <li><h5>Classe Hyperdive: {{nave?.hyperdrive_rating}}</h5></li>
+      <li><h5>Megalights/h: {{nave?.MGLT}}</h5></li>
+      <li><h5>Capacidade de Carga (kg): {{nave?.cargo_capacity}}</h5></li>
+      <li><h5>Consumiveis: {{nave?.consumables}}</h5></li>
+    </ul>
+  </div> 
+
+  <div>
+    <h3>Filmes</h3>
+    <ul class="ml-3">
+      <li *ngFor="let film of nave?.films"><h5>{{film}}</h5></li>
+    </ul>
   </div>
 
-<ng-template #conteudo>  
-  <div class="h-auto d-flex flex-column ml-5 mt-5">
-    <h1>{{nave?.name}}</h1>
-    <div>
-      <h3>Informações da Espaçonave</h3>
-      <ul class="ml-3">
-        <li><h5>Modelo: {{nave?.model}}</h5></li>
-        <li><h5>Classe: {{nave?.starship_class}}</h5></li>
-        <li><h5>Fabricante: {{nave?.manufacturer}}</h5></li>
-        <li><h5>Comprimento: {{nave?.length}}</h5></li>
-        <li><h5>Custo: {{nave?.cost_in_credits}} em Galactic Credits</h5></li>
-        <li><h5>Equipe Técnica: {{nave?.crew}}</h5></li>
-        <li><h5>Passageiros: {{nave?.passengers}}</h5></li>
-        <li><h5>Velocidade Máxima: {{nave?.max_atmosphering_speed}}</h5></li>
-        <li><h5>Classe Hyperdive: {{nave?.hyperdrive_rating}}</h5></li>
-        <li><h5>Megalights/h: {{nave?.MGLT}}</h5></li>
-        <li><h5>Capacidade de Carga (kg): {{nave?.cargo_capacity}}</h5></li>
-        <li><h5>Consumiveis: {{nave?.consumables}}</h5></li>
-      </ul>
-    </div> 
-
-    <div>
-      <h3>Filmes</h3>
-      <ul class="ml-3">
-        <li *ngFor="let film of nave?.films"><h5>{{film}}</h5></li>
-      </ul>
-    </div>
-
-    <div *ngIf="nave?.pilots.length">
-      <h3>Pilotos</h3>
-      <ul class="ml-3">
-        <li *ngFor="let piloto of nave?.pilots"><h5>{{piloto}}</h5></li>
-      </ul>
-    </div>
+  <div *ngIf="nave?.pilots.length">
+    <h3>Pilotos</h3>
+    <ul class="ml-3">
+      <li *ngFor="let piloto of nave?.pilots"><h5>{{piloto}}</h5></li>
+    </ul>
   </div>
-</ng-template>
+</div>
