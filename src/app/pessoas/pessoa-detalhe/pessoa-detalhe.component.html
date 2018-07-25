@@ -1,0 +1,44 @@
+<div class="h-auto d-flex flex-column ml-5 mt-5">
+  <h1>{{pessoa?.name}}</h1>
+  <div>
+    <h3>Informações pessoais</h3>
+    <ul class="ml-3">
+      <li><h5>Data de nascimento: {{pessoa?.birth_year }}</h5></li>
+      <li><h5>Cor dos olhos: {{pessoa?.eye_color}}</h5></li>
+      <li><h5>Gênero: {{pessoa?.gender}}</h5></li>
+      <li><h5>Cor do cabelo: {{pessoa?.hair_color}}</h5></li>
+      <li><h5>Altura: {{pessoa?.height}}</h5></li>
+      <li><h5>Peso: {{pessoa?.mass}}</h5></li>
+      <li><h5>Cor da pele: {{pessoa?.skin_color}}</h5></li>
+    </ul>
+  </div> 
+
+  <div *ngIf="pessoa?.films.length">
+    <h3>Filmes</h3>
+    <ul class="ml-3">
+      <li *ngFor="let f of pessoa?.films"><h5>{{f}}</h5></li>
+    </ul>
+  </div>
+
+  <div *ngIf="pessoa?.species.length">
+    <h3>Espécie</h3>
+    <ul class="ml-3">
+      <li *ngFor="let p of pessoa?.species"><h5>{{p}}</h5></li>
+    </ul>
+  </div>
+
+  <div *ngIf="pessoa?.starships.length">
+    <h3>Espaçonaves</h3>
+    <ul class="ml-3">
+      <li *ngFor="let s of pessoa?.starships"><h5>{{s}}</h5></li>
+    </ul>
+  </div>
+
+  <div *ngIf="pessoa?.vehicles.length">
+    <h3>Veículos</h3>
+    <ul class="ml-3">
+      <li *ngFor="let v of pessoa?.vehicles"><h5>{{v}}</h5></li>
+    </ul>
+  </div>
+  
+</div>

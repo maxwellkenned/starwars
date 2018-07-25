@@ -1,0 +1,30 @@
+<div class="h-auto d-flex flex-column ml-5 mt-5">
+  <h1>{{planeta?.name}}</h1>
+  <div>
+    <h3>Informações da Espécie</h3>
+    <ul class="ml-3">
+      <li><h5>Diâmetro (km): {{planeta?.diameter}}</h5></li>
+      <li><h5>Periodo de rotação (horas): {{planeta?.rotation_period}}</h5></li>
+      <li><h5>Periodo de orbita (dias): {{planeta?.orbital_period}}</h5></li>
+      <li><h5>Gravidade: {{planeta?.gravity}}</h5></li>
+      <li><h5>População: {{planeta?.population}}</h5></li>
+      <li><h5>Clima: {{planeta?.climate }}</h5></li>
+      <li><h5>Terreno: {{planeta?.terrain}}</h5></li>
+      <li><h5>Água na superfice (%): {{planeta?.surface_water}}</h5></li>
+    </ul>
+  </div> 
+
+  <div *ngIf="planeta?.residents.length">
+    <h3>Personagens</h3>
+    <ul class="ml-3">
+      <li *ngFor="let p of planeta?.residents"><h5>{{p}}</h5></li>
+    </ul>
+  </div>
+
+  <div *ngIf="planeta?.films.length">
+    <h3>Filmes</h3>
+    <ul class="ml-3">
+      <li *ngFor="let f of planeta?.films"><h5>{{f}}</h5></li>
+    </ul>
+  </div>
+</div>

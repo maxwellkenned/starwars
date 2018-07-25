@@ -1,0 +1,48 @@
+<div class="h-auto d-flex flex-column ml-5 mt-5">
+  <h1>{{filme?.title}}</h1>
+  <div>
+    <h3>Informações do filme</h3>
+    <ul class="ml-3">
+      <li><h5>Nº do episódio: {{filme?.episode_id }}</h5></li>
+      <li><h5>Texto de abertura:</h5> <p>{{filme?.opening_crawl}}</p></li>
+      <li><h5>Diretor: {{filme?.director}}</h5></li>
+      <li><h5>Produtor(es): {{filme?.producer}}</h5></li>
+      <li><h5>Data de lançamento: {{filme?.release_date}}</h5></li>
+    </ul>
+  </div> 
+
+  <div *ngIf="filme?.species.length">
+    <h3>Espécies</h3>
+    <ul class="ml-3">
+      <li *ngFor="let p of filme?.species"><h5>{{p}}</h5></li>
+    </ul>
+  </div>
+
+  <div *ngIf="filme?.starships.length">
+    <h3>Espaçonaves</h3>
+    <ul class="ml-3">
+      <li *ngFor="let s of filme?.starships"><h5>{{s}}</h5></li>
+    </ul>
+  </div>
+
+  <div *ngIf="filme?.vehicles.length">
+    <h3>Veículos</h3>
+    <ul class="ml-3">
+      <li *ngFor="let v of filme?.vehicles"><h5>{{v}}</h5></li>
+    </ul>
+  </div>
+
+  <div *ngIf="filme?.characters.length">
+    <h3>Personagens</h3>
+    <ul class="ml-3">
+      <li *ngFor="let v of filme?.characters"><h5>{{v}}</h5></li>
+    </ul>
+  </div>
+
+  <div *ngIf="filme?.planets.length">
+    <h3>Planetas</h3>
+    <ul class="ml-3">
+      <li *ngFor="let v of filme?.planets"><h5>{{v}}</h5></li>
+    </ul>
+  </div>
+</div>
